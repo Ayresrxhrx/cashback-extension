@@ -1,11 +1,11 @@
 // Lista de afiliados com StoreID / Tracking ID reais (substitui pelos teus IDs)
 export const affiliates = {
   amazon: {
-    storeID: "SEU_AMAZON_STORE_ID",
+    storeID: "poupacash2104-20",
     apply: url => {
       try {
         const newUrl = new URL(url);
-        newUrl.searchParams.set("tag", "SEU_AMAZON_STORE_ID"); // Coloca teu StoreID real
+        newUrl.searchParams.set("tag", "poupacash2104-20"); // Coloca teu StoreID real
         return newUrl.toString();
       } catch (err) {
         console.error("Erro ao aplicar link Amazon:", err, url);
