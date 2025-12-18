@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "PoupaCash 💸",
+  "description": "Cashback e cupons automáticos para Amazon, AliExpress, eBay, Shein, Temu e Jumia.",
+  "version": "1.0.0",
+  "permissions": [
+    "tabs",
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/*",
+        "*://*.aliexpress.com/*",
+        "*://*.ebay.com/*",
+        "*://*.shein.com/*",
+        "*://*.temu.com/*",
+        "*://*.jumia.co.mz/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
+}
